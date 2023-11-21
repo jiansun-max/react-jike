@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import {
   Card,
   Breadcrumb,
@@ -11,17 +13,16 @@ import {
   message,
 } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import "./index.scss";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-import { useEffect, useState } from "react";
+
+import { useChannel } from "@/hooks/useChannel";
 import {
   createArticleAPI,
   getArticleById,
   updateArticleAPI,
 } from "@/apis/article";
-import { useChannel } from "@/hooks/useChannel";
+import "react-quill/dist/quill.snow.css";
+import "./index.scss";
 
 const { Option } = Select;
 
@@ -38,8 +39,9 @@ const Publish = () => {
     // 1.按照接口文档的格式处理收集到的表单数据
     const { channel_id, content, title } = formValue;
     const reqData = {
-      title,
+      channel_id,
       content,
+      title,
       type: 1,
       cover: {
         type: imageType, // 封面格式
@@ -51,7 +53,6 @@ const Publish = () => {
           }
         }), // 图片列表
       },
-      channel_id,
     };
     // 2.调用接口提交
     // 调用不同的接口 新增 - 新增接口 更新 - 更新接口 id
