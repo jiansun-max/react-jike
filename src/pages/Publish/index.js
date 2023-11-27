@@ -14,7 +14,6 @@ import {
 } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import ReactQuill from "react-quill";
-
 import { useChannel } from "@/hooks/useChannel";
 import {
   createArticleAPI,
@@ -90,17 +89,16 @@ const Publish = () => {
     //1.通过id获取数据
     async function getArticleDetail() {
       const res = await getArticleById(articleId);
-      const data = res.data;
-      const { cover } = data;
+
       form.setFieldsValue({
-        ...data,
-        type: cover.type,
+        ...res.data,
+        type: res.data.cover.type,
       });
       // 回填图片列表
-      setImageType(cover.type);
+      setImageType(res.data.cover.type);
       // 显示图片({url:url})
       setImageList(
-        cover.images.map((url) => {
+        res.data.cover.images.map((url) => {
           return { url };
         })
       );
