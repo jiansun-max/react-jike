@@ -6,14 +6,14 @@ const Home = () => {
       <BarChart
         title={"三大框架满意度"}
         xData={["Vue", "React", "Augular"]}
-        sData={[20, 30, 70]}
+        sData={[42, 46, 12]}
       />
-      <BarChart
+      {/* <BarChart
         title={"三大框架使用度"}
         xData={["Vue", "React", "Augular"]}
-        sData={[50, 80, 20]}
+        sData={[32, 55, 13]}
         style={{ width: "500px", height: "400px" }}
-      />
+      /> */}
     </div>
   );
 };
