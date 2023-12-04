@@ -22,12 +22,25 @@ import {
 } from "@/apis/article";
 import "react-quill/dist/quill.snow.css";
 import "./index.scss";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchChannels } from "@/store/modules/channels";
 
 const { Option } = Select;
 
 const Publish = () => {
   // 获取频道列表
   const { channelList } = useChannel();
+
+  // 触发channels  action
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchChannels());
+  // }, [dispatch]);
+
+  // const channelList = useSelector((state) => state.channels.channels);
+  // console.log(channelList, "----channelList----");
+
+
   const navigate = useNavigate();
   // 提交表单
   const onFinish = (formValue) => {

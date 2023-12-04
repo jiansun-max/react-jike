@@ -51,8 +51,8 @@ const GeekLayout = () => {
     dispatch(fetchUserInfo());
   }, [dispatch]);
 
-  const name = useSelector((state) => state.user.userInfo.name);
-
+  const mobile = useSelector((state) => state.user.userInfo.mobile);
+  // console.log(name, "---name---");
   // 退出功能确认回调
   const onConfirm = () => {
     console.log("确认退出");
@@ -64,7 +64,7 @@ const GeekLayout = () => {
       <Header className="header">
         <div className="logo" />
         <div className="user-info">
-          <span className="user-name">{name}</span>
+          <span className="user-name">{mobile}</span>
           <span className="user-logout">
             <Popconfirm
               title="是否确认退出？"

@@ -2,9 +2,11 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./modules/user";
+import channelReducer from "./modules/channels";
 
 export default configureStore({
-    reducer: {
-        user: userReducer
-    }
-})
+  reducer: {
+    user: userReducer,
+    channel: channelReducer,
+  },
+});

@@ -48,6 +48,7 @@ const fetchLogin = (loginForm) => {
 const fetchUserInfo = () => {
   return async (dispatch) => {
     const res = await getProfileAPI();
+    console.log(res,'---res---')
     dispatch(setUserInfo(res.data));
   };
 };
