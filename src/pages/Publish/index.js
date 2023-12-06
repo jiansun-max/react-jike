@@ -40,7 +40,6 @@ const Publish = () => {
   // const channelList = useSelector((state) => state.channels.channels);
   // console.log(channelList, "----channelList----");
 
-
   const navigate = useNavigate();
   // 提交表单
   const onFinish = (formValue) => {
