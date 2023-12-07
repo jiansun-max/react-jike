@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import {
   Breadcrumb,
   Card,
@@ -17,6 +16,7 @@ import {
 // 引入汉化包-时间选择器显示中文
 import locale from "antd/es/date-picker/locale/zh_CN";
 // 导入资源
+import { Link, useNavigate } from "react-router-dom";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import img404 from "@/assets/error.png";
 import { useChannel } from "@/hooks/useChannel";
@@ -175,10 +175,10 @@ const Article = () => {
     await delArticleAPI(data.id);
     // 重新渲染
     const newReqData = { ...reqData };
-    const newData = list.filter((item) => item.id !== data.id);
-    if (newData.length === 0 && newReqData.page > 1) {
-      newReqData.page--;
-    }
+    // const newData = list.filter((item) => item.id !== data.id);
+    // if (newData.length === 0 && newReqData.page > 1) {
+    //   newReqData.page--;
+    // }
     setReqData(newReqData);
   };
 
