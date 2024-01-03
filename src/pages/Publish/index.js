@@ -14,16 +14,17 @@ import {
 } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import ReactQuill from "react-quill";
+
 import { useChannel } from "@/hooks/useChannel";
 import {
   createArticleAPI,
   getArticleById,
   updateArticleAPI,
 } from "@/apis/article";
-import "react-quill/dist/quill.snow.css";
 import "./index.scss";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchChannels } from "@/store/modules/channels";
+import "react-quill/dist/quill.snow.css";
+// import { useSelector, useDispatch } from "react-redux";
+// import { fetchChannels } from "@/store/modules/channels";
 
 const { Option } = Select;
 
