@@ -1,4 +1,7 @@
 import { useEffect } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import { Layout, Menu, Popconfirm } from "antd";
 import {
   HomeOutlined,
@@ -6,8 +9,7 @@ import {
   EditOutlined,
   LogoutOutlined,
 } from "@ant-design/icons";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+
 import { clearUSerInfo, fetchUserInfo } from "@/store/modules/user";
 import "./index.scss";
 
@@ -42,7 +44,7 @@ const GeekLayout = () => {
   // 反向高亮
   // 1.获取当前路由路径
   const location = useLocation();
-  console.log("location-----", location);
+  // console.log("location-----", location);
   const selectedkey = location.pathname;
 
   // 触发个人用户信息action

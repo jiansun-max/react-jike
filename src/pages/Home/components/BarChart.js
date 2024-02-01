@@ -20,8 +20,8 @@ const BarChart = ({
         text: title,
       },
       xAxis: {
-        type: "category",
         data: xData,
+        type: "category",
       },
       yAxis: {
         type: "value",
@@ -34,7 +34,7 @@ const BarChart = ({
       ],
     };
     // 3. 渲染参数
-    myChart.setOption(option);
+    option && myChart.setOption(option);
   }, [title, xData, sData]);
 
   return <div ref={chartRef} style={style} />;

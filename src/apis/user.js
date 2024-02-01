@@ -10,7 +10,7 @@ export function loginAPI(formData) {
   });
 }
 
-// 2,获取用户信息
+// 2.获取用户信息
 export function getProfileAPI() {
   return request({
     url: "/user/profile",
